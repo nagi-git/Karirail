@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>ResponseSample</title>
+</head>
+<body>
+  <h1>HelloResponseDB</h1>
+  <table>
+    <tr>
+      <td>都道府県名：</td><td th:text="$*{placecode}"></td>
+    </tr>
+    <tr>
+      <td>図書館のシステムID：</td><td th:text="$*{systemid}"></td>
+    </tr>
+    <tr>
+      <td>図書館名：</td><td th:text="$*{formal}"></td>
+     </tr>
+    <tr>
+      <td>図書館UR：</td><td th:text="$*{url_pc}"></td>
+     </tr>
+    <tr>
+      <td>図書館住所：</td><td th:text="$*{address}"></td>
+     </tr>
+  </table>
+</body>
+</html>

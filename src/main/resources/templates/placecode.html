@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <h1>Hello World</h1>
+  <form method="post" action="/placecode">
+    都道府県名：<input type="text" name="placecode" th:value="${placecode_value}" />
+    <input type="submit" value="クリック" />
+  </form>
+</body>
+</html>
