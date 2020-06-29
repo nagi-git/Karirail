@@ -1,19 +1,21 @@
 package com.example.demo.placeCodeDto;
 
+import lombok.Data;
+
+@Data
 public class PlaceCodeDataDto {
 	/** 都道府県名 */
-	String placecode;
+	private String placecode;
 
 	/** 図書館のシステムID */
-	String systemid;
+	private String systemid;
 
 	/** 図書館名 */
-	String formal;
+	private String formal;
 
 	/** 図書館URL */
-	String url_pc;
+	private String url_pc;
 
 	/** 図書館住所 */
-	String address;
-
+	private String address;
 }

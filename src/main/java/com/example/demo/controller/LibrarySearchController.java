@@ -3,9 +3,8 @@ package com.example.demo.controller;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,24 +12,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.placeCodeDto.PlaceCodeDto;
 import com.example.demo.service.PlaceCodeService;
 
-@SpringBootApplication
+@Controller
 public class LibrarySearchController {
 
 	@Autowired
 	PlaceCodeService pcService;
 
-	@GetMapping("/placecode")
-	public String getPlacecode(@ModelAttribute ) {
-		
-	}
-
 	/**
-	 * 都道府県入力フォーム
-	 * 
-	 * @return "pcService"
+	 * GET用の処理.
 	 */
 	@RequestMapping("/placecode")
 	public String placecodeForm(HttpSession session, Model model) {
+		// placecode.htmlに画面遷移
 		return "placecode";
 	}
 
@@ -49,8 +42,9 @@ public class LibrarySearchController {
 			return placecodeForm(session, model);
 		}
 
-		// 郵便番号検索APIサービス呼び出し
+		// 図書館検索APIサービス呼び出し
 		PlaceCodeDto placeCodeDto = pcService.service(placecode);
+
 		// thymeleafでリストを展開して表示する
 		model.addAttribute("placecodeList", placeCodeDto.getResults());
 		return "placecode-confirm";

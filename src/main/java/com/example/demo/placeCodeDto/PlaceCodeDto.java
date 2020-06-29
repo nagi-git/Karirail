@@ -11,7 +11,7 @@ public class PlaceCodeDto {
 	/** メッセージ */
 	String message;
 
-	/** 郵便番号情報リスト */
+	/** 図書館情報リスト */
 	List<PlaceCodeDataDto> results = new ArrayList<>();
 
 	public List<PlaceCodeDataDto> getResults() {

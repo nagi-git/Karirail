@@ -15,7 +15,7 @@ public class PlaceCodeService {
 	RestTemplate restTemplate;
 
 	/** 図書館検索API リクエストURL */
-	private static final String URL = "http://api.calil.jp/library?appkey=${APP_KEY}&pref={placecode}";
+	private static final String URL = "https://api.calil.jp/library?appkey=${APP_KEY}&systemid={placecode}&format=json&callback=";
 
 	public PlaceCodeDto service(String placecode) {
 		return restTemplate.getForObject(URL, PlaceCodeDto.class, placecode);
