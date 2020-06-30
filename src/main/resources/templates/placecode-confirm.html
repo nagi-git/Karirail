@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"></meta>
@@ -6,26 +6,26 @@
 </head>
 <body>
   <h1>HelloResponseDB</h1>
-  <table>
+  <table class="sample-table" th:each="item : ${placecodeList}" th:object="${item}">
     <tr>
       <td>都道府県名：</td>
-      <td th:text="*{placecode}"></td>
+      <td>都道府県名</td>
     </tr>
     <tr>
-      <td>図書館のシステムID：</td>
-      <td th:text="*{systemid}"></td>
+      <td>都道府県名：</td>
+      <td th:text="*{pref}"></td>
     </tr>
     <tr>
-      <td>図書館名：</td>
+      <td>都道府県名：</td>
+      <td th:text="*{address1}"></td>
+    </tr>
+    <tr>
+      <td>都道府県名：</td>
+      <td th:text="*{address2}"></td>
+    </tr>
+    <tr>
+      <td>都道府県名：</td>
       <td th:text="*{formal}"></td>
-    </tr>
-    <tr>
-      <td>図書館UR：</td>
-      <td th:text="*{url_pc}"></td>
-    </tr>
-    <tr>
-      <td>図書館住所：</td>
-      <td th:text="*{address}"></td>
     </tr>
   </table>
 </body>

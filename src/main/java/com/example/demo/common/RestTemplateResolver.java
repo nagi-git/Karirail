@@ -1,4 +1,4 @@
-package com.example.demo.restTemplate;
+package com.example.demo.common;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -33,17 +33,17 @@ public class LibrarySearchController {
 	 * @return "placecode-confirm"
 	 */
 	@RequestMapping(value = "/placecode/confirm", method = RequestMethod.POST)
-	public String placecodeConfirm(HttpSession session, Model model, @RequestParam("placecode") String placecode) {
+	public String placecodeConfirm(HttpSession session, Model model, @RequestParam("formal") String formal) {
 
 		// 一応必須チェックのみ 数字・桁数チェックは省略
 		// nullまたは空文字の場合、入力フォームにエラーメッセージを表示
-		if (placecode == null || placecode.equals("")) {
+		if (formal == null || formal.equals("")) {
 			model.addAttribute("errorMessage", "都道府県名を入力してください。");
 			return placecodeForm(session, model);
 		}
 
 		// 図書館検索APIサービス呼び出し
-		PlaceCodeDto placeCodeDto = pcService.service(placecode);
+		PlaceCodeDto placeCodeDto = pcService.service(formal);
 
 		// thymeleafでリストを展開して表示する
 		model.addAttribute("placecodeList", placeCodeDto.getResults());
