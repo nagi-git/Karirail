@@ -15,10 +15,11 @@ public class PlaceCodeService {
 	RestTemplate restTemplate;
 
 	/** 図書館検索API リクエストURL */
-	private static final String URL = "https://api.calil.jp/library?appkey=${APP_KEY}&systemname={formal}&format=json&limit=1&callback=";
+	private static final String URL = "https://api.calil.jp/library?appkey=cb88029bcac7faa027f0e070749a2901&systemname={formal}&format=json&limit=1&callback=";
 
-	public PlaceCodeDto service(String placecode) {
-		return restTemplate.getForObject(URL, PlaceCodeDto.class, placecode);
+	public PlaceCodeDto service(String formal) {
+		System.out.println("service呼び出し成功");
+		return restTemplate.getForObject(URL, PlaceCodeDto.class, formal);
 	}
 
 }

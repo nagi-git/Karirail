@@ -32,7 +32,7 @@ public class LibrarySearchController {
 	 * 
 	 * @return "placecode-confirm"
 	 */
-	@RequestMapping(value = "/placecode/confirm", method = RequestMethod.POST)
+	@RequestMapping(value = "/placecode/confirm", method = RequestMethod.POST, consumes = "application/json")
 	public String placecodeConfirm(HttpSession session, Model model, @RequestParam("formal") String formal) {
 
 		// 一応必須チェックのみ 数字・桁数チェックは省略
@@ -45,8 +45,13 @@ public class LibrarySearchController {
 		// 図書館検索APIサービス呼び出し
 		PlaceCodeDto placeCodeDto = pcService.service(formal);
 
+		System.out.println("pcService.service呼び出し成功");
+
 		// thymeleafでリストを展開して表示する
-		model.addAttribute("placecodeList", placeCodeDto.getResults());
+		model.addAttribute("placecodeList", placeCodeDto.getCallback());
+
+		System.out.println("model.addAttribute呼び出し成功");
+
 		return "placecode-confirm";
 	}
 }
