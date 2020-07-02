@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.placeCodeDto.PlaceCodeDto;
+import com.example.demo.libraryInfoDto.LibraryInfoDto;
 import com.example.demo.service.PlaceCodeService;
 
 @Controller
@@ -32,7 +32,8 @@ public class LibrarySearchController {
 	 * 
 	 * @return "placecode-confirm"
 	 */
-	@RequestMapping(value = "/placecode/confirm", method = RequestMethod.POST, consumes = "application/json")
+	@RequestMapping(value = "/placecode/confirm", method = RequestMethod.POST, consumes = { "text/xml;charset=utf-8",
+			"application/x-www-form-urlencoded" })
 	public String placecodeConfirm(HttpSession session, Model model, @RequestParam("formal") String formal) {
 
 		// 一応必須チェックのみ 数字・桁数チェックは省略
@@ -43,12 +44,12 @@ public class LibrarySearchController {
 		}
 
 		// 図書館検索APIサービス呼び出し
-		PlaceCodeDto placeCodeDto = pcService.service(formal);
+		LibraryInfoDto libraryInfoDto = pcService.service(formal);
 
 		System.out.println("pcService.service呼び出し成功");
 
 		// thymeleafでリストを展開して表示する
-		model.addAttribute("placecodeList", placeCodeDto.getCallback());
+		model.addAttribute("placecodeList", libraryInfoDto.getLibraryInfo());
 
 		System.out.println("model.addAttribute呼び出し成功");
 

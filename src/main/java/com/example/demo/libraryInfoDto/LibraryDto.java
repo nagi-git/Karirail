@@ -1,9 +1,9 @@
-package com.example.demo.placeCodeDto;
+package com.example.demo.libraryInfoDto;
 
 import lombok.Data;
 
 @Data
-public class PlaceCodeDataDto {
+public class LibraryDto {
 	/** カテゴリー */
 	private String category;
 
