@@ -1,64 +1,61 @@
 package com.example.demo.placeCodeDto;
 
-import lombok.Data;
-
-@Data
 public class PlaceCodeDataDto {
 	/** カテゴリー */
-	private String category;
+	String category;
 
 	/** 市町村 */
-	private String city;
+	String city;
 
 	/** 略称 */
-	private String Short;
+	String Short;
 
 	/** システム毎の図書館キー */
-	private String libkey;
+	String libkey;
 
 	/** 都道府県名 */
-	private String pref;
+	String pref;
 
 	/** プライマリーキーか？ */
-	private boolean primary;
+	boolean primary;
 
 	/** faid */
-	private String faid;
+	String faid;
 
 	/** 位置情報 */
-	private String geocode;
+	String geocode;
 
 	/** システムID */
-	private String systemid;
+	String systemid;
 
 	/** 住所 */
-	private String address;
+	String address;
 
 	/** 図書館ID */
-	private String libid;
+	String libid;
 
 	/** 電話番号 */
-	private String tel;
+	String tel;
 
 	/** システム名称 */
-	private String systemname;
+	String systemname;
 
 	/** isil */
-	private String isil;
+	String isil;
 
 	/** 郵便番号 */
-	private String post;
+	String post;
 
 	/** PC版ウェブサイト */
-	private String url_pc;
+	String url_pc;
 
 	/** 正式名称 */
-	private String formal;
+	String formal;
 
 //	/** 外観写真 */
-//	private String image;
+//	String image;
 //
 //	/** パラメータでgeocodeが指定されている場合、その地点からの距離(単位：km) */
-//	private String distance;
+//	String distance;
 
 }

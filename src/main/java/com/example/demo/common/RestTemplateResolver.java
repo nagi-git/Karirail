@@ -21,9 +21,9 @@ public class RestTemplateResolver {
 		List<MediaType> supportedMediaTypes = new ArrayList<>(messageConverter.getSupportedMediaTypes());
 
 		// text/plainのJacksonの処理対象にくわえる
-		supportedMediaTypes.add(MediaType.TEXT_PLAIN);
+//		supportedMediaTypes.add(MediaType.TEXT_PLAIN);
 		supportedMediaTypes.add(MediaType.APPLICATION_JSON);
-		supportedMediaTypes.add(MediaType.APPLICATION_FORM_URLENCODED);
+//		supportedMediaTypes.add(MediaType.APPLICATION_FORM_URLENCODED);
 		messageConverter.setSupportedMediaTypes(supportedMediaTypes);
 
 		// カスタムしたHttpMessageConverterを適用
