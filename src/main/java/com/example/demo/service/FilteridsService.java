@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.filteridsDto.FilteridsDto;
-import com.example.demo.filteridsDto.PlaceCodeDto;
 
 @Service
 public class FilteridsService {
@@ -16,9 +15,9 @@ public class FilteridsService {
 	RestTemplate restTemplate;
 
 	/** 図書館検索API リクエストURL */
-	private static final String URL = "https://api.calil.jp/library?appkey=cb88029bcac7faa027f0e070749a2901&systemname={formal}&format=json&limit=1&callback=";
+	private static final String URL = "https://api.annict.com/v1/works?filter_ids={filter_ids}&access_token=6TCOx_Yr4oe0vnENIq01CruyxtHMzh-is19txE8t5kM";
 
-	public PlaceCodeDto service(String formal) {
+	public FilteridsDto service(String filter_ids) {
 		System.out.println("service呼び出し成功");
 		return restTemplate.getForObject(URL, FilteridsDto.class, filter_ids);
 	}

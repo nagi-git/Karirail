@@ -4,6 +4,10 @@ import lombok.Data;
 
 @Data
 public class FilteridsDataDto {
+
+	/** ID */
+	int filter_ids;
+
 	/** ID */
 	int id;
 

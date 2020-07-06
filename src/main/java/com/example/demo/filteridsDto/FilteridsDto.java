@@ -7,8 +7,6 @@ import lombok.Data;
 @Data
 public class FilteridsDto {
 
-	private String works;
-
 	private int total_count;
 
 	private int next_page;
@@ -16,6 +14,6 @@ public class FilteridsDto {
 	private int prev_page;
 
 	/** リスト */
-	private List<FilteridsDataDto> callback;
+	private List<FilteridsDataDto> works;
 
 }

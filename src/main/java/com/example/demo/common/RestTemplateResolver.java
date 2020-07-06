@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class RestTemplateResolver {
 	@Bean
-	public RestTemplate placeCodeSearchRestTemplate() {
+	public RestTemplate filteridsSearchRestTemplate() {
 		RestTemplate restTemplate = new RestTemplate();
 
 		MappingJackson2HttpMessageConverter messageConverter = new MappingJackson2HttpMessageConverter();
