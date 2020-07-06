@@ -1,4 +1,4 @@
-package com.example.demo.placeCodeDto;
+package com.example.demo.filteridsDto;
 
 import java.util.List;
 

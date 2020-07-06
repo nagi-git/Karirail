@@ -5,13 +5,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.demo.placeCodeDto.PlaceCodeDto;
+import com.example.demo.filteridsDto.FilteridsDto;
+import com.example.demo.filteridsDto.PlaceCodeDto;
 
 @Service
-public class PlaceCodeService {
+public class FilteridsService {
 
 	@Autowired
-	@Qualifier("placeCodeSearchRestTemplate")
+	@Qualifier("filteridsSearchRestTemplate")
 	RestTemplate restTemplate;
 
 	/** 図書館検索API リクエストURL */
@@ -19,7 +20,7 @@ public class PlaceCodeService {
 
 	public PlaceCodeDto service(String formal) {
 		System.out.println("service呼び出し成功");
-		return restTemplate.getForObject(URL, PlaceCodeDto.class, formal);
+		return restTemplate.getForObject(URL, FilteridsDto.class, filter_ids);
 	}
 
 }
